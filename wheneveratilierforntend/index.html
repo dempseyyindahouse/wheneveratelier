@@ -359,32 +359,8 @@
     </div>
 
     <script>
-        // Thêm vào đầu script
-const firebaseConfig = {
-  apiKey: "AIzaSyDZZfT9iuGN0wTdq6tJZqPefYHZx6wqEG8",
-  authDomain: "whenerver-atelier.firebaseapp.com",
-  projectId: "whenerver-atelier",
-  storageBucket: "whenerver-atelier.firebasestorage.app",
-  messagingSenderId: "332877752665",
-  appId: "1:332877752665:web:955392f1329352eef88448",
-  measurementId: "G-88FJ2Q74D5"
-};
-firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
-const adminEmails = ['trunghieu17112004@gmail.com'];
-
-// Kiểm tra admin
-auth.onAuthStateChanged(user => {
-  const adminLink = document.getElementById('admin-link');
-  if (user && adminEmails.includes(user.email)) {
-    adminLink.classList.remove('hidden');
-  } else {
-    adminLink.classList.add('hidden');
-  }
-});
         let cart = [];
         let cartTotal = 0;
-        let currentCategory = 'all';
 
         function addToCart(name, price) {
             const existingItem = cart.find(item => item.name === name);
